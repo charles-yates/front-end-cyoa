@@ -1,3 +1,5 @@
+import React, {useState} from 'react';
+import { Api } from "./api";
 import logo from './logo.svg';
 import './App.css';
 import CreateComment from './components/CreateComment';
@@ -28,10 +30,15 @@ export default App;
 */
 
 export default function App() {
+  const [comments, setComments] = useState([]);
+  Api.get('http://localhost:3000/getComments').then(data => {
+    setComments(data);  
+  });
+
   return (
-    <div className="App">
+    <div className="appWrapper">
       <CreateComment />
-      <CommentList />
+      <CommentList comments={comments} />
     </div>
   )
 }
