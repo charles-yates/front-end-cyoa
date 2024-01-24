@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CreateComment from './components/CreateComment';
+import CommentList from './components/CommentList';
+/*
 function App() {
   return (
     <div className="App">
@@ -23,3 +25,13 @@ function App() {
 }
 
 export default App;
+*/
+
+export default function App() {
+  return (
+    <div className="App">
+      <CreateComment />
+      <CommentList />
+    </div>
+  )
+}
